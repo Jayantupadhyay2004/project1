@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Great Quotes - Specific Quote</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    .bg-succes {
+  background-color: #0e690e;
+  color: aliceblue; /* Replace this color with the dark green shade you want */
+}
+</style>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-succes ">
+    <a class="navbar-brand" href="index.html">Great Quotes</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">All Quotes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="newQuotes.html">New Quote</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container mt-4">
+    <div id="specificQuotePage">
+      <!-- Specific quote content will be added here dynamically using JavaScript -->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // Function to display the specific quote on specific.html
+    function displaySpecificQuote() {
+      const index = localStorage.getItem("specificQuoteIndex");
+      if (index !== null) {
+        const quoteIndex = parseInt(index);
+        const quote = localStorage.getItem("quotes");
+        if (quote) {
+          const quotesArray = JSON.parse(quote);
+          if (quoteIndex >= 0 && quoteIndex < quotesArray.length) {
+            const specificQuotePage = document.getElementById("specificQuotePage");
+            specificQuotePage.innerHTML = "";
+
+            const specificQuoteRow = document.createElement("div");
+            specificQuoteRow.classList.add("row", "my-2");
+
+            const specificQuoteDiv = document.createElement("div");
+            specificQuoteDiv.classList.add("col-md-12");
+
+            const specificQuoteText = document.createElement("h3");
+            specificQuoteText.textContent = quotesArray[quoteIndex].quote;
+
+            const specificAuthorText = document.createElement("h3");
+            specificAuthorText.textContent = quotesArray[quoteIndex].author;
+
+            specificQuoteDiv.appendChild(specificQuoteText);
+            specificQuoteDiv.appendChild(specificAuthorText);
+
+            specificQuoteRow.appendChild(specificQuoteDiv);
+            specificQuotePage.appendChild(specificQuoteRow);
+          }
+        }
+      }
+    }
+
+    // Call the function to display the specific quote
+    displaySpecificQuote();
+  </script>
+</body>
+</html>

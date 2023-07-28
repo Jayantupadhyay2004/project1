@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Great Quotes - All Quotes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    .bg-succes {
+  background-color: #0e690e;
+  color: aliceblue; /* Replace this color with the dark green shade you want */
+}
+</style>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-succes ">
+    <a class="navbar-brand" href="index.html">Great Quotes</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">All Quotes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="newQuotes.html">New Quote</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h1>All Quotes</h1>
+  <div class="container mt-4">
+
+    <div id="allQuotesPage">
+      <!-- Content will be added here dynamically using JavaScript -->
+    </div>
+  </div>
+
+  <!-- Include script.js and call displayQuotes() function -->
+  <script src="script.js"></script>
+  <script>
+
+displayQuotes();
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

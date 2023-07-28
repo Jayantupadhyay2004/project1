@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Great Quotes - New Quote</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+  .bg-succes {
+background-color: #0e690e;
+color: aliceblue; /* Replace this color with the dark green shade you want */
+}
+</style>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-succes ">
+  <a class="navbar-brand" href="index.html">Great Quotes</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">All Quotes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="newQuotes.html">New Quote</a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="container mt-4">
+    <h2>Add New Quote</h2>
+    <form>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" class="form-control" id="author" required>
+      </div>
+      <div class="form-group">
+        <label for="quote">Quote:</label>
+        <textarea class="form-control" id="quote" required></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" id="addQuoteBtn">Add Quote</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+
+    document.getElementById("addQuoteBtn").addEventListener("click", addQuote);
+  </script>
+</body>
+</html>
